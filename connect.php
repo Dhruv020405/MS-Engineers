@@ -6,4 +6,4 @@
     $password = '';
 
     $dns = "mysql:host=$servername;dbname=$database";
-    
+?>
