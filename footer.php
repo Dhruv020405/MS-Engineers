@@ -1,34 +1,40 @@
 <style>
-    /* Corporate Modern Footer Styles - Dark Blue Edition */
+    /* Corporate Modern Footer Styles - Deep Dark Premium Edition */
     .modern-footer {
-        background: linear-gradient(45deg, #1a237e, #3f51b5);
-        color: #ffffff;
-        padding: 60px 0 30px;
-        box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.15);
-        font-family: 'Inter', sans-serif; /* Fallback to standard font */
+        background: rgba(10, 15, 25, 0.95); /* Deep dark slate */
+        backdrop-filter: blur(15px);
+        -webkit-backdrop-filter: blur(15px);
+        border-top: 1px solid rgba(255, 255, 255, 0.05);
+        color: #f8fafc;
+        padding: 70px 0 30px;
+        font-family: 'Inter', sans-serif;
+        position: relative;
+        z-index: 10;
     }
 
     .modern-footer h5 {
-        color: #ffeb3b; /* Gold accent for headings */
+        color: #ffffff;
+        font-family: 'Orbitron', sans-serif;
         font-weight: 700;
-        font-size: 1.15rem;
+        font-size: 1.2rem;
         margin-bottom: 25px;
         text-transform: uppercase;
-        letter-spacing: 0.5px;
+        letter-spacing: 1px;
         position: relative;
-        padding-bottom: 10px;
+        padding-bottom: 12px;
     }
 
-    /* Small decorative underline for headings */
+    /* Decorative Amber underline for headings */
     .modern-footer h5::after {
         content: '';
         position: absolute;
         left: 0;
         bottom: 0;
         width: 40px;
-        height: 2px;
-        background: #ffeb3b;
+        height: 3px;
+        background: #f59e0b; /* Amber Accent */
         border-radius: 2px;
+        box-shadow: 0 0 10px rgba(245, 158, 11, 0.4);
     }
 
     .modern-footer ul {
@@ -39,7 +45,7 @@
 
     .modern-footer ul li {
         margin-bottom: 15px;
-        color: #e2e8f0; /* Off-white for better reading */
+        color: #94a3b8; /* Muted slate for reading */
         font-size: 0.95rem;
         line-height: 1.6;
         display: flex;
@@ -47,7 +53,7 @@
     }
 
     .modern-footer a {
-        color: #e2e8f0;
+        color: #cbd5e1;
         text-decoration: none;
         transition: all 0.3s ease;
         display: inline-block;
@@ -55,78 +61,68 @@
 
     /* Link hover animation */
     .modern-footer ul li a:hover {
-        color: #ffeb3b;
+        color: #f59e0b; /* Amber hover */
         transform: translateX(6px); /* Smooth slide right */
     }
 
     /* Contact icons alignment */
     .modern-footer .contact-icon {
-        color: #ffeb3b;
-        font-size: 1rem;
+        color: #f59e0b;
+        font-size: 1.1rem;
         margin-right: 12px;
-        margin-top: 4px; /* Align with multi-line text */
-        min-width: 16px;
+        margin-top: 4px;
+        min-width: 18px;
         text-align: center;
     }
 
-    /* Styled Download Button */
-    .modern-footer .download-btn {
-        display: inline-flex;
-        align-items: center;
-        gap: 8px;
-        margin-top: 10px;
-        padding: 8px 20px;
-        background: rgba(255, 255, 255, 0.1);
-        border: 1px solid rgba(255, 255, 255, 0.3);
-        border-radius: 4px;
-        color: #ffeb3b;
-        font-weight: 600;
-        font-size: 0.9rem;
-        transition: all 0.3s ease;
-    }
-
-    .modern-footer .download-btn:hover {
-        background: #ffeb3b;
-        color: #1a237e;
-        border-color: #ffeb3b;
-        transform: translateY(-2px);
-        box-shadow: 0 4px 12px rgba(255, 235, 59, 0.2);
+    /* Hover effect for contact text links */
+    .modern-footer ul li span a:hover {
+        color: #f59e0b;
+        transform: none; /* Prevent text shifting on pure contact links */
+        text-decoration: underline;
     }
 
     /* Social Icons Styling */
     .modern-footer .social-icons {
         display: flex;
         gap: 15px;
-        margin-top: 10px;
+        margin-top: 15px;
     }
 
     .modern-footer .social-icons a {
         display: inline-flex;
         align-items: center;
         justify-content: center;
-        width: 42px;
-        height: 42px;
-        background: rgba(255, 255, 255, 0.1);
+        width: 45px;
+        height: 45px;
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.1);
         border-radius: 50%; /* Circle shape */
-        color: #ffffff;
+        color: #cbd5e1;
         font-size: 1.2rem;
-        transition: all 0.3s ease;
+        transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
     .modern-footer .social-icons a:hover {
-        background: #ffeb3b;
-        color: #1a237e;
+        background: #f59e0b;
+        color: #000000;
+        border-color: #f59e0b;
         transform: translateY(-5px); /* Lift effect */
-        box-shadow: 0 6px 15px rgba(255, 235, 59, 0.3);
+        box-shadow: 0 10px 20px rgba(245, 158, 11, 0.4);
     }
 
     /* Bottom Copyright/Divider */
     .modern-footer .footer-bottom {
-        border-top: 1px solid rgba(255, 255, 255, 0.1);
-        padding-top: 20px;
-        margin-top: 40px;
+        border-top: 1px solid rgba(255, 255, 255, 0.05);
+        padding-top: 25px;
+        margin-top: 50px;
         text-align: center;
         font-size: 0.85rem;
+        color: #64748b;
+        letter-spacing: 0.5px;
+    }
+
+    .modern-footer .footer-bottom strong {
         color: #94a3b8;
     }
 </style>
@@ -135,10 +131,14 @@
     <div class="container">
         <div class="row">
             <!-- Products Section -->
-            <div class="col-md-4 col-sm-6 mb-4 mb-md-0">
+            <div class="col-lg-4 col-md-6 mb-5 mb-lg-0">
                 <h5>Products</h5>
                 <ul>
-                    <?php foreach ($products as $product): ?>
+                    <?php 
+                    // Safely check for variables to prevent undefined warnings
+                    $footer_items = isset($all_products) ? $all_products : (isset($products) ? $products : []);
+                    foreach ($footer_items as $product): 
+                    ?>
                         <li>
                             <a href="product_click.php?product_name=<?= urlencode($product['product_name']) ?>">
                                 <?= htmlspecialchars($product['product_name']) ?>
@@ -149,7 +149,7 @@
             </div>
             
             <!-- Contact Us Section -->
-            <div class="col-md-4 col-sm-6 mb-4 mb-md-0">
+            <div class="col-lg-4 col-md-6 mb-5 mb-lg-0">
                 <h5>Contact Us</h5>
                 <ul>
                     <li>
@@ -166,7 +166,7 @@
                     <li>
                         <i class="fas fa-envelope contact-icon"></i> 
                         <span>
-                            <a href="mailto:maulik@sica.in">maulik@msengg.in</a> | 
+                            <a href="mailto:maulik@sica.in">maulik@msengg.in</a><br>
                             <a href="mailto:sales@msengg.in">Sales@msengg.in</a>
                         </span>
                     </li>
@@ -174,9 +174,11 @@
             </div>
 
             <!-- Follow Us Section -->
-            <div class="col-md-4 col-sm-6">
+            <div class="col-lg-4 col-md-12">
                 <h5>Follow Us</h5>
-                <p class="text-light mb-3" style="opacity: 0.8; font-size: 0.95rem;">Stay connected with us on social media.</p>
+                <p class="mb-4" style="color: #94a3b8; font-size: 0.95rem; line-height: 1.6;">
+                    Stay connected with us on social media for the latest engineering updates, product launches, and industry news.
+                </p>
                 <div class="social-icons">
                     <a href="https://www.facebook.com/profile.php?id=100064131395346&mibextid=ZbWKwL" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
                     <a href="https://www.instagram.com/msen.gg?utm_source=qr&igsh=M2xybTZiazkzNG1q" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
@@ -185,11 +187,11 @@
             </div>
         </div>
 
-        <!-- Optional Copyright Row -->
+        <!-- Copyright Row -->
         <div class="row">
-            <div class="col-12 text-center">
+            <div class="col-12">
                 <div class="footer-bottom">
-                    &copy; <?= date("Y"); ?> Sica. All Rights Reserved.
+                    &copy; <?= date("Y"); ?> <strong>MS Engineers</strong>. All Rights Reserved.
                 </div>
             </div>
         </div>

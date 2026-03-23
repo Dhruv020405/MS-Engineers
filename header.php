@@ -1,10 +1,13 @@
 <style>
-    /* Corporate Modern Navbar Styles - Dark Blue Edition */
+    /* Corporate Modern Navbar Styles - Deep Slate Blue Edition */
     .modern-navbar {
-        background: linear-gradient(45deg, #1a237e, #3f51b5) !important;
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1) !important;
-        padding: 12px 0 !important;
-        transition: all 0.3s ease;
+        background: rgba(15, 23, 42, 0.9) !important; /* Deep Slate Blue */
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        padding: 15px 0 !important;
+        transition: all 0.4s ease;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
     }
     
     .modern-navbar .navbar-brand img {
@@ -13,18 +16,20 @@
     }
 
     .modern-navbar .navbar-brand:hover img {
-        transform: scale(1.02);
+        transform: scale(1.05);
     }
 
     /* Navigation Links */
     .modern-navbar .nav-link {
-        color: #ffffff !important;
-        font-weight: 600;
+        color: #f8fafc !important;
+        font-family: 'Inter', sans-serif;
+        font-weight: 500;
         font-size: 0.95rem;
         padding: 8px 16px !important;
-        margin: 0 8px;
+        margin: 0 5px;
         transition: color 0.3s ease;
         position: relative;
+        letter-spacing: 0.5px;
     }
 
     /* PC HOVER EFFECTS */
@@ -36,28 +41,31 @@
             left: 50%;
             width: 0;
             height: 2px;
-            background: #ffeb3b;
+            background: #f59e0b; /* Amber Accent */
             transition: all 0.3s ease;
             transform: translateX(-50%);
+            border-radius: 2px;
+            box-shadow: 0 0 10px rgba(245, 158, 11, 0.5);
         }
 
         .modern-navbar .nav-link:hover {
-            color: #ffeb3b !important;
+            color: #f59e0b !important;
         }
 
         .modern-navbar .nav-link:hover::after {
-            width: 80%;
+            width: 70%;
         }
 
         .modern-navbar .dropdown-menu {
-            background: #ffffff;
-            border: 1px solid #f1f5f9;
-            border-radius: 4px;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-            padding: 8px 0;
+            background: rgba(15, 23, 42, 0.95); /* Matches Navbar */
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+            padding: 10px 0;
             margin-top: 15px; 
             min-width: 220px;
             display: none;
+            backdrop-filter: blur(10px);
         }
 
         .modern-navbar .dropdown-menu::before {
@@ -72,10 +80,16 @@
 
         .modern-navbar .nav-item.dropdown:hover .dropdown-menu {
             display: block;
+            animation: fadeInDown 0.3s ease forwards;
+        }
+
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         .modern-navbar .dropdown-item {
-            color: #475569 !important;
+            color: #cbd5e1 !important;
             padding: 10px 20px;
             font-weight: 500;
             font-size: 0.9rem;
@@ -83,31 +97,10 @@
         }
 
         .modern-navbar .dropdown-item:hover {
-            background: #f8fafc;
-            color: #1a237e !important;
-            padding-left: 24px;
+            background: rgba(255, 255, 255, 0.05);
+            color: #f59e0b !important;
+            padding-left: 25px;
         }
-    }
-
-    /* Shared Button Style */
-    .modern-navbar .login-button {
-        background: #ffffff !important;
-        color: #1a237e !important;
-        border-radius: 4px;
-        padding: 10px 24px !important;
-        font-weight: 600;
-        font-size: 0.9rem;
-        letter-spacing: 0.5px;
-        transition: all 0.3s ease;
-        margin-left: 15px;
-        border: 1px solid #ffffff;
-        text-align: center;
-    }
-
-    .modern-navbar .login-button:hover {
-        background: #ffeb3b !important;
-        color: #1a237e !important;
-        border-color: #ffeb3b;
     }
 
     /* --- MOBILE VIEW (max-width: 991px) --- */
@@ -120,7 +113,7 @@
 
         /* Animated Hamburger */
         .navbar-toggler i {
-            color: #ffffff;
+            color: #f59e0b; /* Amber Accent */
             font-size: 1.5rem;
             transition: transform 0.3s ease;
         }
@@ -130,14 +123,15 @@
         }
 
         .modern-navbar .navbar-collapse {
-            background: rgba(26, 35, 126, 0.98);
+            background: rgba(15, 23, 42, 0.98); /* Matches Navbar */
             backdrop-filter: blur(15px);
             -webkit-backdrop-filter: blur(15px);
-            padding: 10px 20px 30px;
+            padding: 15px 20px 25px;
             border-radius: 0 0 20px 20px;
-            margin-top: 12px;
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            margin-top: 15px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-top: none;
         }
 
         .modern-navbar .nav-link {
@@ -147,6 +141,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            color: #e2e8f0 !important;
         }
 
         /* Chevron for mobile dropdown */
@@ -164,10 +159,11 @@
 
         .modern-navbar .dropdown-toggle.active-drop::after {
             transform: rotate(180deg);
+            color: #f59e0b;
         }
 
         .modern-navbar .dropdown-menu {
-            background: rgba(255, 255, 255, 0.05);
+            background: rgba(0, 0, 0, 0.15);
             border: none;
             margin-top: 0;
             padding: 0;
@@ -177,30 +173,24 @@
         }
 
         .modern-navbar .dropdown-item {
-            color: #e2e8f0 !important;
+            color: #cbd5e1 !important;
             padding: 14px 20px;
             font-size: 0.9rem;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.02);
             transition: all 0.2s ease;
         }
 
-        .modern-navbar .dropdown-item:active {
-            background: rgba(255, 255, 255, 0.1);
-            color: #ffeb3b !important;
-        }
-
-        .modern-navbar .login-button {
-            margin: 20px 0 0 0;
-            width: 100%;
-            display: block;
-            border-radius: 50px; /* Modern rounded button for mobile */
-            padding: 14px !important;
+        .modern-navbar .dropdown-item:active,
+        .modern-navbar .dropdown-item:hover {
+            background: rgba(245, 158, 11, 0.1);
+            color: #f59e0b !important;
+            padding-left: 25px;
         }
     }
 
     /* Global Body Spacing */
     body {
-        padding-top: 75px; 
+        padding-top: 80px; 
     }
 </style>
 
@@ -208,7 +198,7 @@
     <div class="container">
         <!-- Logo -->
         <a class="navbar-brand" href="index.php">
-            <img src="logo.jpg" alt="Sica">
+            <img src="logo.jpg" alt="MS Engineers">
         </a>
 
         <!-- Hamburger menu -->
@@ -217,7 +207,8 @@
         </button>
 
         <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav mx-auto">
+            <!-- Aligned items to the right using ml-auto -->
+            <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
                     <a href="index.php" class="nav-link">Home</a>
                 </li>
@@ -226,9 +217,13 @@
                         Products
                     </a>
                     <div class="dropdown-menu">
-                        <?php foreach ($products as $product): ?>
-                            <a href="product_click.php?product_name=<?= urlencode($product['product_name']) ?>" class="dropdown-item">
-                                <?= htmlspecialchars($product['product_name']) ?>
+                        <?php 
+                        // Safely check for the variable so it doesn't crash if renamed or missing on other pages
+                        $nav_items = isset($all_products) ? $all_products : (isset($products) ? $products : []);
+                        foreach ($nav_items as $nav_item): 
+                        ?>
+                            <a href="product_click.php?product_name=<?= urlencode($nav_item['product_name']) ?>" class="dropdown-item">
+                                <?= htmlspecialchars($nav_item['product_name']) ?>
                             </a>
                         <?php endforeach; ?>
                     </div>
@@ -240,10 +235,6 @@
                     <a href="contact_us.php" class="nav-link">Contact Us</a>
                 </li>
             </ul>
-            <!-- Login Button -->
-            <div class="navbar-nav ml-auto">
-                <a href="login.php" class="nav-link btn login-button">LOG-IN / REGISTRATION</a>
-            </div>
         </div>
     </div>
 </nav>
@@ -265,9 +256,6 @@ $(document).ready(function() {
             
             // Smooth slide animation
             $menu.stop(true, true).slideToggle(300);
-            
-            // Close other items if necessary (optional accordion style)
-            // $('.dropdown-menu').not($menu).slideUp().prev().removeClass('active-drop');
         }
     });
 
